@@ -21,7 +21,7 @@ const ContactsPage = ({ onNext }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <Navbar
         showAlert={showAlert}
         alertMessage={alertMessage}
@@ -29,7 +29,7 @@ const ContactsPage = ({ onNext }) => {
         onToggleSidebar={handleToggleSidebar}
       />
       <Sidebar isOpen={isSidebarOpen} activePage="/contacts" />
-      <div className="flex-grow mt-16 md:ml-[50px] flex justify-center items-center w-full dark:bg-gray-900">
+      <div className="flex-grow mt-16 md:mt-22 md:ml-0 flex justify-center items-center w-full dark:bg-gray-900 p-4">
         <AccountForm onNext={onNext} />
       </div>
     </div>

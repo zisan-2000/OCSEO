@@ -21,7 +21,7 @@ const BrandAssetsForm = ({ onNext }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-4 md:p-8 shadow-md w-full max-w-[964px] mx-auto  rounded-md">
+    <div className="bg-white dark:bg-gray-900 p-4 md:p-8 shadow-md w-full max-w-3xl mx-auto rounded-md">
       <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 dark:text-white">
         Brand Assets
       </h2>
@@ -80,7 +80,7 @@ const BrandAssetsForm = ({ onNext }) => {
           <button
             type="button"
             onClick={handleNext}
-            className="bg-green-500 text-white py-2 px-6 rounded animate-bounce"
+            className="bg-green-500 text-white py-2 px-6 rounded"
           >
             Next
           </button>

@@ -12,7 +12,7 @@ import { NavLink } from "react-router-dom";
 const Sidebar = ({ isOpen, activePage }) => {
   return (
     <div
-      className={`bg-gradient-to-b from-[#00ADEF] to-[#2B3D8E] text-white w-[200px] md:w-[225px] h-[calc(100vh-80px)] md:h-[calc(100vh-100px)] flex flex-col justify-between p-4 md:p-6 fixed top-[80px] md:top-[100px] left-0 border-r-1.5 border-white border-opacity-50 overflow-y-auto transition-transform duration-300 ring-2 ${
+      className={`bg-gradient-to-b from-[#00ADEF] to-[#2B3D8E] text-white w-[200px] md:w-[225px] h-[calc(100vh-80px)] md:h-[calc(100vh-100px)] flex flex-col justify-between p-4 md:p-6 fixed top-[80px] md:top-[100px] left-0 border-r border-white border-opacity-50 overflow-y-auto transition-transform duration-300 ring-2 z-40 ${
         isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
       }`}
     >
@@ -23,7 +23,7 @@ const Sidebar = ({ isOpen, activePage }) => {
             <NavLink
               to="/contacts"
               className={({ isActive }) =>
-                activePage === "/contacts"
+                isActive
                   ? "flex items-center p-2 rounded bg-red-600 text-white"
                   : "flex items-center p-2 rounded hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out"
               }
@@ -36,7 +36,7 @@ const Sidebar = ({ isOpen, activePage }) => {
             <NavLink
               to="/business-details"
               className={({ isActive }) =>
-                activePage === "/business-details"
+                isActive
                   ? "flex items-center p-2 rounded bg-red-600 text-white"
                   : "flex items-center p-2 rounded hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out"
               }
@@ -49,7 +49,7 @@ const Sidebar = ({ isOpen, activePage }) => {
             <NavLink
               to="/brand-assets"
               className={({ isActive }) =>
-                activePage === "/brand-assets"
+                isActive
                   ? "flex items-center p-2 rounded bg-red-600 text-white"
                   : "flex items-center p-2 rounded hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out"
               }
@@ -62,7 +62,7 @@ const Sidebar = ({ isOpen, activePage }) => {
             <NavLink
               to="/grant-access"
               className={({ isActive }) =>
-                activePage === "/grant-access"
+                isActive
                   ? "flex items-center p-2 rounded bg-red-600 text-white"
                   : "flex items-center p-2 rounded hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out"
               }
@@ -75,7 +75,7 @@ const Sidebar = ({ isOpen, activePage }) => {
             <NavLink
               to="/finish"
               className={({ isActive }) =>
-                activePage === "/finish"
+                isActive
                   ? "flex items-center p-2 rounded bg-red-600 text-white"
                   : "flex items-center p-2 rounded hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out"
               }
@@ -87,7 +87,10 @@ const Sidebar = ({ isOpen, activePage }) => {
         </ul>
       </div>
       <div className="mt-auto">
-        <button className="w-full text-left p-2 rounded hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out flex items-center">
+        <button
+          aria-label="Logout"
+          className="w-full text-left p-2 rounded hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out flex items-center"
+        >
           <FaPowerOff className="w-6 h-6 mr-2" />
           Logout
         </button>

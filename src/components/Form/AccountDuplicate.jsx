@@ -1,43 +1,8 @@
-import React, { useState } from "react";
-import Modal from "react-modal";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
-const AccountForm = ({ onNext }) => {
-  const navigate = useNavigate();
-  const [formCompleted, setFormCompleted] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const isValid = validateForm();
-    if (isValid) {
-      console.log("Form submitted");
-      setFormCompleted(true);
-    } else {
-      console.log("Form is incomplete");
-    }
-  };
-
-  const validateForm = () => {
-    return true;
-  };
-
-  const handleNext = () => {
-    const isValid = validateForm();
-    if (isValid) {
-      setShowAlert(true);
-      setFormCompleted(true);
-      setTimeout(() => {
-        onNext("/business-details");
-        navigate("/business-details");
-      }, 2000); // Redirect after 2 seconds
-    } else {
-      console.log("Form is incomplete");
-    }
-  };
-
+const AccountForm = () => {
   return (
-    <div className="bg-white dark:bg-gray-900 p-4 md:p-8 shadow-md w-full max-w-3xl mx-auto mt-4 md:mt-16 rounded-md">
+    <div className="bg-white dark:bg-gray-900 p-4 md:p-8 shadow-md w-full max-w-3xl mx-auto mt-8 md:mt-16 rounded-md">
       <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 dark:text-white">
         Account Contacts
       </h2>
@@ -46,7 +11,7 @@ const AccountForm = ({ onNext }) => {
         access to your account and reports. You can add additional contacts
         later from your business profile.
       </p>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="mb-4 md:mb-6">
           <label className="block text-gray-700 dark:text-gray-300 mb-2">
             Primary User
@@ -55,7 +20,6 @@ const AccountForm = ({ onNext }) => {
             type="text"
             placeholder="John Smith"
             className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded dark:bg-gray-800 dark:text-gray-300"
-            required
           />
         </div>
         <div className="flex flex-col md:flex-row gap-4 mb-4 md:mb-6">
@@ -63,13 +27,11 @@ const AccountForm = ({ onNext }) => {
             type="email"
             placeholder="johnsmith@abcompany.com"
             className="flex-1 p-2 border border-gray-300 dark:border-gray-600 rounded dark:bg-gray-800 dark:text-gray-300"
-            required
           />
           <input
             type="phone"
             placeholder="(562) 555-8080"
             className="flex-1 p-2 border border-gray-300 dark:border-gray-600 rounded dark:bg-gray-800 dark:text-gray-300"
-            required
           />
         </div>
         <h3 className="text-lg font-bold mb-4 dark:text-white">
@@ -96,7 +58,7 @@ const AccountForm = ({ onNext }) => {
             className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded dark:bg-gray-800 dark:text-gray-300"
           />
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-between mb-4">
+        <div className="flex flex-col md:flex-row items-center justify-between">
           <button
             type="button"
             className="w-full md:w-auto bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-2 px-4 rounded border border-gray-300 dark:border-gray-600 mb-4 md:mb-0"
@@ -121,39 +83,13 @@ const AccountForm = ({ onNext }) => {
             Skip & Finish Later
           </button>
           <button
-            onClick={handleNext}
+            type="submit"
             className="bg-green-500 text-white py-2 px-6 rounded"
           >
             Next
           </button>
         </div>
-        {formCompleted && (
-          <p className="text-green-500 dark:text-green-400 mt-4">
-            Form is completed, go ahead!
-          </p>
-        )}
       </form>
-      <Modal
-        isOpen={showAlert}
-        onRequestClose={() => setShowAlert(false)}
-        className="fixed inset-0 flex items-center justify-center p-4 bg-black bg-opacity-50"
-        overlayClassName="fixed inset-0 bg-black bg-opacity-50"
-      >
-        <div className="bg-white dark:bg-gray-800 p-6 rounded shadow-lg">
-          <h3 className="text-lg font-bold mb-4 dark:text-white">
-            Form is completed!
-          </h3>
-          <p className="text-gray-700 dark:text-gray-300 mb-4">
-            Let's go to the next form!
-          </p>
-          <button
-            onClick={() => setShowAlert(false)}
-            className="bg-green-500 text-white py-2 px-4 rounded"
-          >
-            Close
-          </button>
-        </div>
-      </Modal>
     </div>
   );
 };

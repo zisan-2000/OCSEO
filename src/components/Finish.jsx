@@ -12,7 +12,7 @@ const Finish = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-4 md:p-8 shadow-md w-full max-w-[968px] mx-auto   rounded-md text-center">
+    <div className="bg-white dark:bg-gray-900 p-4 md:p-8 shadow-md w-full max-w-3xl mx-auto rounded-md text-center">
       <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 dark:text-white">
         Setup Complete!
       </h2>

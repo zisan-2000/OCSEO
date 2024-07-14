@@ -25,7 +25,7 @@ const FinishPage = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <Navbar
         showAlert={showAlert}
         alertMessage={alertMessage}
@@ -34,7 +34,7 @@ const FinishPage = () => {
         onToggleSidebar={handleToggleSidebar}
       />
       <Sidebar isOpen={isSidebarOpen} activePage="/finish" />
-      <div className="flex-grow mt-[80px] md:ml-[50px] md:mt-[0px] flex justify-center items-center w-full h-auto md:h-[980px] dark:bg-gray-900">
+      <div className="flex-grow mt-20 md:mt-0 md:ml-16 flex justify-center items-center w-full p-4 dark:bg-gray-900">
         <Finish />
       </div>
     </div>

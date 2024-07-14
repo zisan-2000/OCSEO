@@ -21,7 +21,7 @@ const BusinessDetails = ({ onNext }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <Navbar
         showAlert={showAlert}
         alertMessage={alertMessage}
@@ -29,7 +29,7 @@ const BusinessDetails = ({ onNext }) => {
         onToggleSidebar={handleToggleSidebar}
       />
       <Sidebar isOpen={isSidebarOpen} activePage="/business-details" />
-      <div className="flex-grow mt-[80px] md:ml-[50px] md:mt-[20px] flex justify-center items-center w-full h-auto md:h-[980px] dark:bg-gray-900">
+      <div className="flex-grow mt-20 md:mt-26 md:ml-16 flex justify-center items-center w-full dark:bg-gray-900 p-4">
         <BusinessDetailsForm onNext={onNext} />
       </div>
     </div>
