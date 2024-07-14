@@ -12,7 +12,7 @@ import { NavLink } from "react-router-dom";
 const Sidebar = ({ isOpen, activePage }) => {
   return (
     <div
-      className={`bg-gradient-to-b from-[#00e9ef] to-[#00e9ef] text-white w-[200px] md:w-[225px] h-[calc(100vh-80px)] md:h-[calc(100vh-100px)] flex flex-col justify-between p-4 md:p-6 fixed top-[80px] md:top-[100px] left-0 border-r-1.5 border-white border-opacity-50 overflow-y-auto transition-transform duration-300 ring-2 ${
+      className={`bg-gradient-to-b from-[#00ADEF] to-[#2B3D8E] text-white w-[200px] md:w-[225px] h-[calc(100vh-80px)] md:h-[calc(100vh-100px)] flex flex-col justify-between p-4 md:p-6 fixed top-[80px] md:top-[100px] left-0 border-r-1.5 border-white border-opacity-50 overflow-y-auto transition-transform duration-300 ring-2 ${
         isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
       }`}
     >
