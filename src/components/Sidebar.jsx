@@ -1,3 +1,4 @@
+// Sidebar.jsx
 import React from "react";
 import {
   FaAddressBook,
@@ -76,8 +77,8 @@ const Sidebar = ({ isOpen, activePage }) => {
               to="/finish"
               className={({ isActive }) =>
                 isActive
-                  ? "flex items-center p-2 rounded bg-red-600 text-white"
-                  : "flex items-center p-2 rounded hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out"
+                  ? "flex  p-2 rounded bg-red-600 text-white"
+                  : "flex  p-2 rounded hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out"
               }
             >
               <FaCheckCircle className="w-6 h-6 mr-2" />

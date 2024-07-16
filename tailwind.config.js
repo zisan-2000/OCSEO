@@ -36,7 +36,15 @@ const config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.clip-polygon': {
+          'clip-path': 'polygon(0% 50%, 15% 40%, 15% 60%)',
+        },
+      });
+    },
+  ],
 };
 
 export default config;
